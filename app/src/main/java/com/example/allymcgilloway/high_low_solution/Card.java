@@ -9,7 +9,7 @@ public class Card {
     private Suit suit;
     private Rank rank;
 
-    public Card(Suit suit, Rank rank){
+    public Card(Suit suit, Rank rank) {
         this.suit = suit;
         this.rank = rank;
     }
@@ -26,7 +26,7 @@ public class Card {
         return this.rank.getValue();
     }
 
-    public String prettyName(){
+    public String prettyName() {
         return (rank.getName() + " of " + suit.getSuit());
     }
 }

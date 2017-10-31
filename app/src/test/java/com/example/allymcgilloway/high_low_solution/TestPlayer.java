@@ -21,6 +21,8 @@ public class TestPlayer {
     private Player player2;
     private Card card3;
     private Card card4;
+    private Card card5;
+
 
     @Before
     public void setup(){
@@ -31,6 +33,8 @@ public class TestPlayer {
         player2 = new Player("Player 2");
         card3 = new Card(Suit.DIAMONDS, Rank.KING);
         card4 = new Card(Suit.DIAMONDS, Rank.ACE);
+        card5 = new Card(Suit.HEARTS, Rank.ACE);
+
     }
 
     @Test
@@ -51,12 +55,22 @@ public class TestPlayer {
         assertEquals(5, player.getHandValue());
     }
 
+
 //    @Test
-//    public void acesAreLow() {
-//        player1.addCardToHand(card3);
+//    public void handCanBeChecked() {
 //        player1.addCardToHand(card3);
 //        player1.addCardToHand(card4);
-//        player1.aceChecker(player1);
-//        assertEquals(21, player1.getHandValue());
+//        assertEquals(false, player1.handChecker(player1, Rank.JACK));
 //    }
+
+    @Test
+    public void acesAreLow() {
+        player1.addCardToHand(card3);
+        player1.addCardToHand(card3);
+        player1.addCardToHand(card4);
+        System.out.println(card3.getValue());
+        System.out.println(card3.getValue());
+        System.out.println(card4.getValue());
+        assertEquals(21, player1.getHandValue());
+    }
 }

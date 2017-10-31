@@ -38,7 +38,12 @@ public class Player implements Participant {
 
     @Override
     public void addCardToHand(Card card) {
-        this.hand.addCard(card);
+        if (card.getRank() == Rank.ACE && hand.getHandValue() >= 11) {
+            card.getRank().setValue(1);
+            this.hand.addCard(card);
+        } else {
+            this.hand.addCard(card);
+        }
     }
 
     @Override
@@ -47,5 +52,13 @@ public class Player implements Participant {
         return cardsInHand + hand.describeHand();
     }
 
+//
+//    public void handChecker(Participant player, Rank cardRank) {
+//        for (Card card : player.getHand().getCards()) {
+//            if (card.getRank() == cardRank) {
+//                card.getRank().setValue(1);
+//            }
+//        }
+//    }
 
 }
