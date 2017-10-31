@@ -5,7 +5,7 @@ package com.example.allymcgilloway.high_low_solution;
  */
 
 public enum Rank {
-    ACE(1, "Ace"),
+    ACE(11, "Ace"),
     TWO(2, "Two"),
     THREE(3, "Three"),
     FOUR(4,"Four"),
@@ -33,5 +33,9 @@ public enum Rank {
 
     public int getValue() {
         return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
     }
 }

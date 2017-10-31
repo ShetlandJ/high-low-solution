@@ -34,6 +34,10 @@ public class Hand {
         this.value += card.getValue();
     }
 
+    public ArrayList<Card> getHand(){
+        return this.cards;
+    }
+
     public String describeHand() {
         String handText = "";
         for (Card card : getCards()) {

@@ -1,5 +1,7 @@
 package com.example.allymcgilloway.high_low_solution;
 
+import java.util.ArrayList;
+
 /**
  * Created by allymcgilloway on 17/10/2017.
  */
@@ -22,6 +24,10 @@ public class Player implements Participant {
     public Hand getHand() {
         return hand;
     }
+
+//    public ArrayList<Hand> getHandArray(){
+//        return this.hand;
+//    }
 
 
     @Override

@@ -24,6 +24,8 @@ public class TestGame {
     private Ui ui;
     private Card card1;
     private Card card2;
+    private Card card3;
+    private Card card4;
 
     @Before
     public void before(){
@@ -38,6 +40,9 @@ public class TestGame {
         game = new Game(spyDeck, ui);
         card1 = new Card(Suit.DIAMONDS, Rank.FOUR);
         card2 = new Card(Suit.CLUBS, Rank.NINE);
+        card3 = new Card(Suit.DIAMONDS, Rank.KING);
+        card4 = new Card(Suit.DIAMONDS, Rank.ACE);
+
     }
 
     @Test
@@ -52,6 +57,16 @@ public class TestGame {
         player2.addCardToHand(card2);
         Participant player = game.checkWinner(players);
         assertEquals("Player 2", player.getName());
+
+    }
+
+    @Test
+    public void acesAreLow() {
+        player1.addCardToHand(card3);
+        player1.addCardToHand(card3);
+        player1.addCardToHand(card4);
+        game.aceChecker(player1);
+        assertEquals(21, player1.getHandValue());
 
     }
 }
