@@ -68,9 +68,13 @@ public class TestPlayer {
         player1.addCardToHand(card3);
         player1.addCardToHand(card3);
         player1.addCardToHand(card4);
-        System.out.println(card3.getValue());
-        System.out.println(card3.getValue());
-        System.out.println(card4.getValue());
         assertEquals(21, player1.getHandValue());
+    }
+
+    @Test
+    public void latterAcesAreLow() {
+        player1.addCardToHand(card4);
+        player1.addCardToHand(card4);
+        assertEquals(12, player1.getHandValue());
     }
 }
